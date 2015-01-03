@@ -1,6 +1,8 @@
 # TryPaper
 
-TODO: Write a gem description
+A gem for the TryPaper API. Use this gem when you need to print and mail letters and postcards via USPS.
+
+Gem requires API keys from TryPaper.com
 
 ## Installation
 
@@ -24,7 +26,7 @@ TODO: Write usage instructions here
 
 ## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/TryPaper/fork )
+1. Fork it ( https://github.com/pmichaeljones/TryPaper/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
