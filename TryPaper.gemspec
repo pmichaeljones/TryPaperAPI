@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = TryPaper::VERSION
   spec.authors       = ["Patrick Jones"]
   spec.email         = ["pmichaeljones@gmail.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
-  spec.homepage      = ""
+  spec.summary       = %q{This gem is used to access the TryPaper postal mailing API.}
+  spec.description   = %q{Using this gem allows you to upload Base64 encoded documents and send them to the TryPaper API endoints. Manage your mailing from your TryPaper dashboard.}
+  spec.homepage      = "http://github.com/pmichaeljones/trypaperapi"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
@@ -20,4 +20,5 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.7"
   spec.add_development_dependency "rake", "~> 10.0"
+  spec.add_development_dependency 'rspec'
 end
