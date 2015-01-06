@@ -8,10 +8,11 @@ describe TryPaper do
     expect(mailing).to be_kind_of(TryPaper::Mailing)
   end
 
-  it 'should accept API key' do
+  it 'should accept an API key' do
     api_key = "12345"
     mailing = TryPaper::Mailing.new(api_key)
     expect(mailing.api_key).to eq(api_key)
   end
 
 end
+
