@@ -3,7 +3,7 @@ require "TryPaper/version"
 module TryPaper
 
   #the Mailer class takes an instance of the document class and sends it to the TryPaper API
-  class Mailing
+  class Mailer
 
     attr_reader :api_key
 
