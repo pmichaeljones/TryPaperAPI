@@ -1,6 +1,8 @@
 require 'trypaper'
 require 'vcr'
-require 'webmock'
+require 'webmock/rspec'
+require 'json'
+
 
 RSpec.configure do |config|
   # some (optional) config here
