@@ -1,8 +1,11 @@
-# Find File
-# Convert into Base64
-# POST file to TryPaper API
-# Deal with Response & Raise Errors
-#
+require 'bundler/setup'
+Bundler.setup
+
+require 'trypaper' # and any other gems you need
+
+RSpec.configure do |config|
+  # some (optional) config here
+end
 
 require './lib/trypaper'
 require 'minitest/autorun'
