@@ -1,3 +1,12 @@
+# How Does This Gem Work
+# Find File
+# Convert into Base64
+# POST file to TryPaper API
+# Deal with Response & Raise Errors
+
+
+---
+
 # TryPaper
 
 A gem for the TryPaper API. Use this gem when you need to print and mail letters and postcards via USPS.
