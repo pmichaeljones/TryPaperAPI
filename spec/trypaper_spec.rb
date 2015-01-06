@@ -2,20 +2,9 @@ require 'spec_helper'
 
 describe TryPaper do
 
-  it "should do something" do
-  end
-
-  it "should do other things" do
-  end
-
-  describe "#instance_method" do
-
-    it "should do some stuff" do
-    end
-
-    it "should do some other stuff" do
-    end
-
+  it 'should exist' do
+    new = TryPaper::Mailing.new
+    expect(new).to be_kind_of(TryPaper::Mailing)
   end
 
 end
