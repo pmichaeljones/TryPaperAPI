@@ -1,4 +1,5 @@
 require "TryPaper/version"
+require "TryPaper/configuration"
 require "TryPaper/document"
-require "TryPaper/mailer"
 require "TryPaper/recipient"
+require "TryPaper/mailer"

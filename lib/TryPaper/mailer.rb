@@ -17,7 +17,7 @@ module TryPaper
 
     def send_data
       {
-        "ReturnAddressId" => TryPaper.config.return_address,
+        "ReturnAddressId" => TryPaper.configuration.return_address,
         #"Tags" => ["triplicate_contents"],
         "Content" => document.base64format,
         "Recipient" => recipient.formatted_address
