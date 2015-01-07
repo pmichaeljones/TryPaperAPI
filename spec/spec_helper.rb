@@ -2,6 +2,8 @@ require 'trypaper'
 require 'vcr'
 require 'webmock/rspec'
 
+TEST_API_KEY = "TPTESTCF24A7D8095EDF88E3EFD6103C"
+
 RSpec.configure do |config|
   # some (optional) config here
 end

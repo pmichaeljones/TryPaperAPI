@@ -1,0 +1,1 @@
+This is just a base file to use in the testing. I will be read into the Document class and then encoded using Base64.
