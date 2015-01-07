@@ -1,8 +1,8 @@
 require 'spec_helper'
 require 'pry'
 
+# Testing the class here
 describe TryPaper::Mailer do
-  subject { TryPaper::Mailer }
 
   it 'should exist' do
     mailing = TryPaper::Mailer.new(TEST_API_KEY)
@@ -25,11 +25,15 @@ describe TryPaper::Mailer do
     expect(mailing.document).to eq(nil)
   end
 
-  it 'should send encoded document to TryPaper' do
-    TryPaper::Mailer.new(TEST_API_KEY)
+end
+
+# Testing the API calls here
+describe TryPaper::Mailer do
+  subject { TryPaper::Mailer }
+
+  it 'should make a POST request to the TryPaper API' do
 
   end
-
 
 end
 

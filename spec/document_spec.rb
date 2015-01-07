@@ -8,7 +8,9 @@ describe TryPaper::Document do
   end
 
   it 'should accept a file when initialized' do
-    ##
+    file = File.read('./spec/documents/input_text_file.txt')
+    doc = TryPaper::Document.new(file)
+    expect(doc).to be_kind_of(TryPaper::Mailer)
   end
 
   it 'should read the file' do
