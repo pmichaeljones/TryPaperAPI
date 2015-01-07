@@ -15,21 +15,4 @@ module TryPaper
 
   end
 
-
-
 end
-
-uri = URI.parse(API_URL)
-
-# Full control
-http = Net::HTTP.new(uri.host, uri.port)
-http.use_ssl = true
-request = Net::HTTP::Post.new(uri.request_uri)
-
-#headers
-request['Authorization'] = TryPaper.config.api_key
-request['Content-Type'] = "application/json"
-
-request.body = send_data.to_json
-
-response = http.request(request)

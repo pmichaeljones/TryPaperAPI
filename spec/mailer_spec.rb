@@ -1,30 +1,33 @@
 require 'spec_helper'
+require 'pry'
 
 describe TryPaper::Mailer do
+  subject { TryPaper::Mailer }
 
   it 'should exist' do
-    api_key = "12345"
-    mailing = TryPaper::Mailer.new(api_key)
+    mailing = TryPaper::Mailer.new(TEST_API_KEY)
     expect(mailing).to be_kind_of(TryPaper::Mailer)
   end
 
   it 'should accept an API key' do
-    api_key = "12345"
-    mailing = TryPaper::Mailer.new(api_key)
-    expect(mailing.api_key).to eq(api_key)
+    mailing = TryPaper::Mailer.new(TEST_API_KEY)
+    expect(mailing.api_key).to eq(TEST_API_KEY)
   end
 
   it 'should accept a document when given' do
-    api_key = "12345"
     document = Object.new
-    mailing = TryPaper::Mailer.new(api_key, document)
+    mailing = TryPaper::Mailer.new(TEST_API_KEY, document)
     expect(mailing.document).to eq(document)
   end
 
   it 'should set document to nil when not given' do
-    api_key = "12345"
-    mailing = TryPaper::Mailer.new(api_key)
+    mailing = TryPaper::Mailer.new(TEST_API_KEY)
     expect(mailing.document).to eq(nil)
+  end
+
+  it 'should send encoded document to TryPaper' do
+    TryPaper::Mailer.new(TEST_API_KEY)
+
   end
 
 
