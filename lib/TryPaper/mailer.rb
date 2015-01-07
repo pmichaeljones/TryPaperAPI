@@ -6,10 +6,11 @@ module TryPaper
     API_URL = "https://api.trypaper.com/Mailing"
 
     attr_reader :api_key
-    attr_accessor :document
+    attr_accessor :document, :recipient
 
-    def initialize(api_key, document = nil)
+    def initialize(api_key, recipient = nil, document = nil)
       @api_key = api_key
+      @recipient = recipient
       @document = document
     end
 

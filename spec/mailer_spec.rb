@@ -29,10 +29,13 @@ end
 
 # Testing the API calls here
 describe TryPaper::Mailer do
-  subject { TryPaper::Mailer }
+  file = File.read('./spec/documents/input_text_file.txt')
+  doc = TryPaper::Document.new(file)
+
+  subject { TryPaper::Mailer.new(TEST_API_KEY, doc) }
 
   it 'should make a POST request to the TryPaper API' do
-
+    subject.submit
   end
 
 end
