@@ -5,7 +5,8 @@ module TryPaper
 
     API_URL = "https://api.trypaper.com/Mailing"
 
-    attr_reader :api_key, :document
+    attr_reader :api_key
+    attr_accessor :document
 
     def initialize(api_key, document = nil)
       @api_key = api_key
@@ -14,19 +15,7 @@ module TryPaper
 
   end
 
-  {
-    "ReturnAddressId" => "XXXXX",
-    "Recipient" =>
-    {
-        "Name" => "John Smith",
-        "AddressLineOne" => "123 Any Street",
-        "AddressLineTwo" => "Apt 789",
-        "City" => "Anytown",
-        "Province" => "WA",
-        "PostalCode" => "12345"
-    },
-    "Content" => "JVBERi0xLjUN...hyZWYNCjQxMDA2DQolJUVPRg=="
-  }
+
 
 end
 

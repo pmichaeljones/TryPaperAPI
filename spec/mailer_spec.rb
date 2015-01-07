@@ -16,7 +16,7 @@ describe TryPaper::Mailer do
 
   it 'should accept a document when given' do
     api_key = "12345"
-    document = "ENCODED-DOCUMENT"
+    document = Object.new
     mailing = TryPaper::Mailer.new(api_key, document)
     expect(mailing.document).to eq(document)
   end
