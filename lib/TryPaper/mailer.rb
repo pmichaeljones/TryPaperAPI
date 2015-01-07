@@ -17,10 +17,9 @@ module TryPaper
     def send_data
       {
         "ReturnAddressId" => TryPaper.configuration.return_address,
-        #"Tags" => ["triplicate_contents"],
         "Content" => document.base64format,
         "Recipient" => recipient.formatted_address
-      }.to_json
+      }
     end
 
     def submit
@@ -33,9 +32,8 @@ module TryPaper
       request['Authorization'] = TryPaper.configuration.api_key
       request['Content-Type'] = "application/json"
 
-      request.body = send_data
+      request.body = send_data.to_json
       response = http.request(request)
-      binding.pry
     end
 
   end
