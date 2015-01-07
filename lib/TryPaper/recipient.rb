@@ -16,7 +16,7 @@ module TryPaper
     end
 
     def formatted_address
-      "Recipient" => {
+      {
         "Name" => name,
         "AddressLineOne" => address1,
         "AddressLineTwo" => address2,
