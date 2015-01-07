@@ -10,7 +10,7 @@ describe TryPaper::Mailer do
   end
 
   it 'should accept a recipient' do
-    file = File.read('./spec/documents/input_text_file.txt')
+    file = File.read('./spec/documents/mac.pdf')
     doc = TryPaper::Document.new(file)
     recipient = TryPaper::Recipient.new("Patrick Jones", "555 Main Street", "Apt 1", "Denver", "CO", "54345")
     mailing = TryPaper::Mailer.new(recipient, doc)
@@ -18,7 +18,7 @@ describe TryPaper::Mailer do
   end
 
   it 'should accept a document when given' do
-    file = File.read('./spec/documents/input_text_file.txt')
+    file = File.read('./spec/documents/mac.pdf')
     doc = TryPaper::Document.new(file)
     recipient = TryPaper::Recipient.new("Patrick Jones", "555 Main Street", "Apt 1", "Denver", "CO", "54345")
     mailing = TryPaper::Mailer.new(recipient, doc)
@@ -29,7 +29,6 @@ end
 
 # Testing the API calls here
 describe TryPaper::Mailer do
-  #file = File.read('./spec/documents/input_text_file.txt')
   file = File.read('./spec/documents/mac.pdf')
   doc = TryPaper::Document.new(file)
   recipient = TryPaper::Recipient.new("Patrick Jones", "555 Main Street", "Apt 1", "Denver", "CO", "54345")
