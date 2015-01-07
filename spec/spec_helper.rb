@@ -13,6 +13,10 @@ VCR.configure do |c|
   c.cassette_library_dir = "spec/fixtures/cassettes"
   c.hook_into :webmock
   c.default_cassette_options = { :record => :once }
+
+  if TEST_API_KEY
+    c.filter_sensitive_data('<TEST_API_KEY>') { TEST_API_KEY }
+  end
 end
 
 TryPaper.configure do |c|

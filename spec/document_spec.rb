@@ -17,7 +17,7 @@ describe TryPaper::Document do
   it 'should Base64 encode the file' do
     file = File.read('./spec/documents/input_text_file.txt')
     doc = TryPaper::Document.new(file)
-    expect(doc.content).to be_kind_of(String)
+    expect(doc.base64format).to be_kind_of(String)
   end
 
 end

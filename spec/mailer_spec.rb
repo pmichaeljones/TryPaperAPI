@@ -5,24 +5,24 @@ require 'pry'
 describe TryPaper::Mailer do
 
   it 'should exist' do
-    mailing = TryPaper::Mailer.new(TEST_API_KEY)
+    mailing = TryPaper::Mailer.new(nil, nil)
     expect(mailing).to be_kind_of(TryPaper::Mailer)
   end
 
-  it 'should accept an API key' do
-    mailing = TryPaper::Mailer.new(TEST_API_KEY)
-    expect(mailing.api_key).to eq(TEST_API_KEY)
+  it 'should accept a recipient' do
+    file = File.read('./spec/documents/input_text_file.txt')
+    doc = TryPaper::Document.new(file)
+    recipient = TryPaper::Recipient.new("Patrick Jones", "555 Main Street", "Apt 1", "Denver", "CO", "54345")
+    mailing = TryPaper::Mailer.new(recipient, doc)
+    expect(mailing.recipient).to eq(recipient)
   end
 
   it 'should accept a document when given' do
-    document = Object.new
-    mailing = TryPaper::Mailer.new(TEST_API_KEY, document)
-    expect(mailing.document).to eq(document)
-  end
-
-  it 'should set document to nil when not given' do
-    mailing = TryPaper::Mailer.new(TEST_API_KEY)
-    expect(mailing.document).to eq(nil)
+    file = File.read('./spec/documents/input_text_file.txt')
+    doc = TryPaper::Document.new(file)
+    recipient = TryPaper::Recipient.new("Patrick Jones", "555 Main Street", "Apt 1", "Denver", "CO", "54345")
+    mailing = TryPaper::Mailer.new(recipient, doc)
+    expect(mailing.document).to eq(doc)
   end
 
 end
@@ -31,8 +31,9 @@ end
 describe TryPaper::Mailer do
   file = File.read('./spec/documents/input_text_file.txt')
   doc = TryPaper::Document.new(file)
+  recipient = TryPaper::Recipient.new("Patrick Jones", "555 Main Street", "Apt 1", "Denver", "CO", "54345")
 
-  subject { TryPaper::Mailer.new(TEST_API_KEY, doc) }
+  subject { TryPaper::Mailer.new(recipient, doc) }
 
   it 'should make a POST request to the TryPaper API' do
     subject.submit

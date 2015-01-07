@@ -3,14 +3,13 @@ module TryPaper
   #the Mailer class takes an instance of the document class and sends it to the TryPaper API
   class Mailer
     require 'json'
+    require 'pry'
 
     API_URL = "https://api.trypaper.com/Mailing"
 
-    attr_reader :api_key
     attr_accessor :document, :recipient
 
-    def initialize(api_key, recipient, document, tags = {})
-      @api_key = api_key
+    def initialize(recipient, document, tags = {})
       @recipient = recipient
       @document = document
     end
@@ -31,11 +30,12 @@ module TryPaper
       request = Net::HTTP::Post.new(uri.request_uri)
 
       #headers
-      request['Authorization'] = api_key
+      request['Authorization'] = TryPaper.configuration.api_key
       request['Content-Type'] = "application/json"
 
       request.body = send_data
       response = http.request(request)
+      binding.pry
     end
 
   end

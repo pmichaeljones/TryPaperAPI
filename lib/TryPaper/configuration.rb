@@ -11,7 +11,7 @@ module TryPaper
 
   class Configuration
 
-    attr_accessor :api_key
+    attr_accessor :api_key, :return_address
 
     def initialize
     end
