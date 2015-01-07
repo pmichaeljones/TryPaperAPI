@@ -3,6 +3,7 @@ require 'vcr'
 require 'webmock/rspec'
 
 TEST_API_KEY = "TPTESTCF24A7D8095EDF88E3EFD6103C"
+DEFAULT_RETURN_ADDRESS = "555_Main_Street_Fake_City"
 
 RSpec.configure do |config|
   # some (optional) config here

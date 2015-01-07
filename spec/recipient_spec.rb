@@ -46,7 +46,8 @@ describe TryPaper::Recipient do
   describe "#formatted_address"  do
 
     it "should return an address hash" do
-
+      receiver = TryPaper::Recipient.new
+      expect(receiver.formatted_address).to be_kind_of(Hash)
     end
 
   end

@@ -5,13 +5,13 @@ module TryPaper
 
     require 'Base64'
 
-    attr_reader :content, :file
+    attr_reader :base64format, :file
 
     def initialize(file)
       @file = file
     end
 
-    def content
+    def base64format
       Base64.encode64(file)
     end
 
