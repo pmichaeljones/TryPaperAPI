@@ -1,0 +1,1 @@
+TryPaper API only accepts PDFs and HTML files. This document will raise an error when used.
