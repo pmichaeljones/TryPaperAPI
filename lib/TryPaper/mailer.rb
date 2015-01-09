@@ -4,6 +4,7 @@ module TryPaper
   class Mailer
     require 'json'
     require 'pry'
+    require 'net/http'
 
     API_URL = "https://api.trypaper.com/Mailing"
 
@@ -35,6 +36,7 @@ module TryPaper
       request.body = send_data.to_json
       response = http.request(request)
       response
+      #binding.pry
     end
 
   end

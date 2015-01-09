@@ -37,14 +37,18 @@ describe TryPaper::Mailer do
 
     subject { TryPaper::Mailer.new(recipient, doc) }
 
-    it 'should make a POST request to the TryPaper API' do
+    it 'should receive a 201 response with successful send' do
       VCR.use_cassette('pdf_document') do
-        expect(subject.submit).to be_kind_of(TryPaper::Response)
+        response = subject.submit
+        expect(response.code).to eq("201")
       end
     end
 
   end
 
+end
+
+describe TryPaper::Mailer do
   context 'with wrong document type' do
     file = File.read('./spec/documents/input_document.txt')
     doc = TryPaper::Document.new(file)
@@ -52,13 +56,13 @@ describe TryPaper::Mailer do
 
     subject { TryPaper::Mailer.new(recipient, doc) }
 
-    it 'should raise an error if wrong document type' do
+    it 'should receive a 404 error on bad document' do
       VCR.use_cassette('bad_document') do
-        expect{subject.submit}.to raise_error(TryPaper::WrongDocumentTypeError)
+        response = subject.submit
+        expect(response.code).to eq("400")
       end
     end
 
   end
-
 end
 
