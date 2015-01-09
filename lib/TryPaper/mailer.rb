@@ -1,18 +1,24 @@
+require 'json'
+require 'pry'
+require 'net/http'
+
 module TryPaper
+  class WrongDocumentTypeError < StandardError; end
+  class InvalidRecipientError < StandardError; end
+  class InvalidAPIKeyError < StandardError; end
 
   #the Mailer class takes an instance of the document class and sends it to the TryPaper API
   class Mailer
-    require 'json'
-    require 'pry'
-    require 'net/http'
-
     API_URL = "https://api.trypaper.com/Mailing"
 
     attr_accessor :document, :recipient
+    attr_reader :api_key
 
-    def initialize(recipient, document, tags = {})
-      @recipient = recipient
-      @document = document
+    # instantiate client and then add document and recipient
+    def initialize(api_key)
+      @recipient = nil
+      @document = nil
+      @api_key = api_key
     end
 
     def send_data
@@ -35,8 +41,13 @@ module TryPaper
 
       request.body = send_data.to_json
       response = http.request(request)
-      response
-      #binding.pry
+      binding.pry
+      case response.message
+      when "Bad Request"
+        raise WrongDocumentTypeError
+      when "Forbidden"
+      end
+
     end
 
   end
