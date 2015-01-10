@@ -14,8 +14,3 @@ VCR.configure do |c|
   c.hook_into :webmock
   c.default_cassette_options = { :record => :once }
 end
-
-TryPaper.configure do |c|
-  c.api_key = TEST_API_KEY
-  c.return_address = DEFAULT_RETURN_ADDRESS
-end

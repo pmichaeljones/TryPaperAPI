@@ -41,14 +41,13 @@ module TryPaper
 
       request.body = send_data.to_json
       response = http.request(request)
-      binding.pry
-      case response.message
-      when "Bad Request"
-        raise WrongDocumentTypeError
-      when "Forbidden"
-        put "hello"
-      end
-
+      # binding.pry
+      # case response.message
+      # when "Bad Request"
+      #   raise WrongDocumentTypeError
+      # when "Forbidden"
+      #   put "hello"
+      # end
     end
 
   end

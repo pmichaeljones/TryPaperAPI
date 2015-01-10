@@ -5,7 +5,7 @@ require 'pry'
 describe TryPaper::Mailer do
 
   it 'should exist' do
-    mailing = TryPaper::Mailer.new(nil, nil)
+    mailing = TryPaper::Mailer.new(TEST_API_KEY)
     expect(mailing).to be_kind_of(TryPaper::Mailer)
   end
 
@@ -13,7 +13,7 @@ describe TryPaper::Mailer do
     file = File.read('./spec/documents/mac.pdf')
     doc = TryPaper::Document.new(file)
     recipient = TryPaper::Recipient.new("Patrick Jones", "555 Main Street", "Apt 1", "Denver", "CO", "54345")
-    mailing = TryPaper::Mailer.new(recipient, doc)
+    mailing = TryPaper::Mailer.new(TEST_API_KEY)
     expect(mailing.recipient).to eq(recipient)
   end
 

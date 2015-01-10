@@ -6,7 +6,7 @@ module TryPaper
     attr_accessor :name, :address1, :address2, :city, :province, :postalcode
     attr_reader :formatted_address
 
-    def initialize(name = nil, address1 = nil, address2 = nil, city = nil, province = nil, postalcode = nil)
+    def initialize(name = "", address1 = "", address2 = "", city = "", province = "", postalcode = "")
       @name = name
       @address1 = address1
       @address2 = address2
