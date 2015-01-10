@@ -26,6 +26,11 @@ module TryPaper
       }
     end
 
+    # set up recipient configuration prior to submission
+    def configure
+      yield self
+    end
+
   end
 
 end

@@ -16,7 +16,7 @@ module TryPaper
 
     # instantiate client and then add document and recipient
     def initialize(api_key)
-      @recipient = nil
+      @recipient = TryPaper::Recipient.new
       @document = nil
       @api_key = api_key
     end
@@ -46,6 +46,7 @@ module TryPaper
       when "Bad Request"
         raise WrongDocumentTypeError
       when "Forbidden"
+        put "hello"
       end
 
     end
