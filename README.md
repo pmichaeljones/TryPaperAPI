@@ -1,9 +1,9 @@
 # TryPaperAPI
 ---
 
-A gem for the TryPaper API. Use this gem when you need to print and mail letters and postcards via USPS.
+A gem for TryPaper API. Use when you need to print and mail letters via USPS.
 
-Gem requires API keys from TryPaper.com
+Gem requires API keys from [TryPaper.com](http://trypaper.com)
 
 ## Installation
 
@@ -30,13 +30,13 @@ api_key = "AAABBDDCCDDSS"
 client = TryPaper::Mailer.new(api_key)
 ```
 
-Set the recipient value:
+Set the recipient value(leave address2 blank if needed):
 
 ```ruby
 client.recipient.configure do |r|
   r.name = "Patrick Jones"
   r.address1 = "555 Main Street"
-  r.addess2 = "Apartment #3"
+  r.address2 = "Apartment #3"
   r.city = "Denver"
   r.province = "CO"
   r.postalcode = "55555"
