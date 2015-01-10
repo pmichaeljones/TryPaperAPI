@@ -1,13 +1,5 @@
-# How Does This Gem Work
-# Find File
-# Convert into Base64
-# POST file to TryPaper API
-# Deal with Response & Raise Errors
-
-
+# TryPaperAPI
 ---
-
-# TryPaper
 
 A gem for the TryPaper API. Use this gem when you need to print and mail letters and postcards via USPS.
 
@@ -31,7 +23,38 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Instantiate the client:
+
+```ruby
+api_key = "AAABBDDCCDDSS"
+client = TryPaper::Mailer.new(api_key)
+```
+
+Set the recipient value:
+
+```ruby
+client.recipient.configure do |r|
+  r.name = "Patrick Jones"
+  r.address1 = "555 Main Street"
+  r.addess2 = "Apartment #3"
+  r.city = "Denver"
+  r.province = "CO"
+  r.postalcode = "55555"
+end
+```
+
+Read PDF document into variable and load into client:
+
+```ruby
+file = File.read('./documents/business_report.pdf')
+doc = TryPaper::Document.new(file)
+client.document = doc
+```
+
+Submit document to TryPaperAPI
+```ruby
+client.submit
+```
 
 ## Contributing
 
