@@ -36,7 +36,7 @@ module TryPaper
       request = Net::HTTP::Post.new(uri.request_uri)
 
       #headers
-      request['Authorization'] = TryPaper.configuration.api_key
+      request['Authorization'] = api_key
       request['Content-Type'] = "application/json"
 
       request.body = send_data.to_json
