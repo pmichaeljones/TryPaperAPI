@@ -23,9 +23,10 @@ Or install it yourself as:
 
 ## Usage
 
-Instantiate the client:
+Instantiate the client and set a default return address ID(created in the TryPaper dashboard):
 
 ```ruby
+DEFAULT_RETURN_ADDRESS = "business_headquarters"
 api_key = "AAABBDDCCDDSS"
 client = TryPaper::Mailer.new(api_key)
 ```

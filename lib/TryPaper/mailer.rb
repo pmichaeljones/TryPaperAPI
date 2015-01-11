@@ -23,7 +23,7 @@ module TryPaper
 
     def send_data
       {
-        "ReturnAddressId" => TryPaper.configuration.return_address,
+        "ReturnAddressId" => DEFAULT_RETURN_ADDRESS,
         "Content" => document.base64format,
         "Recipient" => recipient.formatted_address
       }

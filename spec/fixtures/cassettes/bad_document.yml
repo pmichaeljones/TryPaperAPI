@@ -1,0 +1,53 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.trypaper.com/Mailing
+    body:
+      encoding: UTF-8
+      string: '{"ReturnAddressId":"555_Main_Street_Fake_City","Content":"VHJ5UGFwZXIgQVBJIG9ubHkgYWNjZXB0cyBQREZzIGFuZCBIVE1MIGZpbGVz\nLiBUaGlzIGRvY3VtZW50IHdpbGwgcmFpc2UgYW4gZXJyb3Igd2hlbiB1c2Vk\nLgo=\n","Recipient":{"Name":"Patrick
+        Jones","AddressLineOne":"555 Main Street","AddressLineTwo":"Apt 1","City":"Denver","Province":"CO","PostalCode":"54345"}}'
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Authorization:
+      - TPTESTCF24A7D8095EDF88E3EFD6103C
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Cache-Control:
+      - no-cache
+      Pragma:
+      - no-cache
+      Content-Length:
+      - '42'
+      Content-Type:
+      - application/json; charset=utf-8
+      Expires:
+      - "-1"
+      Server:
+      - Microsoft-IIS/8.0
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Requestid:
+      - 01a8560f-8e8d-4424-9f62-caac9a6783c2
+      X-Apiversion:
+      - 2.0.1
+      Set-Cookie:
+      - ARRAffinity=0fb861b9c6efe57eefc5a6471990344a9dafe3dcc9dc120612c4578f5eaef35e;Path=/;Domain=api.trypaper.com
+      Date:
+      - Sun, 11 Jan 2015 18:56:59 GMT
+    body:
+      encoding: UTF-8
+      string: '"Mailing Content was an unsupported type."'
+    http_version: 
+  recorded_at: Sun, 11 Jan 2015 18:56:59 GMT
+recorded_with: VCR 2.9.3
