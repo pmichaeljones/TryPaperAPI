@@ -65,6 +65,8 @@ Submit document to TryPaperAPI
 client.submit
 ```
 
+Check [TryPaper API logs](https://www.trypaper.com/Printroom/APIHistory) to see printing status (document recieved, printing, printed, mailed, etc).
+
 ## Contributing
 
 1. Fork it ( https://github.com/pmichaeljones/TryPaperAPI/fork )
