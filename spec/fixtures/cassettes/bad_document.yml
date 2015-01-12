@@ -5,8 +5,7 @@ http_interactions:
     uri: https://api.trypaper.com/Mailing
     body:
       encoding: UTF-8
-      string: '{"ReturnAddressId":"555_Main_Street_Fake_City","Tags":[],"Content":"VHJ5UGFwZXIgQVBJIG9ubHkgYWNjZXB0cyBQREZzIGFuZCBIVE1MIGZpbGVz\nLiBUaGlzIGRvY3VtZW50IHdpbGwgcmFpc2UgYW4gZXJyb3Igd2hlbiB1c2Vk\nLgo=\n","Recipient":{"Name":"Patrick
-        Jones","AddressLineOne":"555 Main Street","AddressLineTwo":"Apt 1","City":"Denver","Province":"CO","PostalCode":"54345"}}'
+      string: '{"ReturnAddressId":"555_Main_Street_Fake_City","Tags":[],"Content":"VHJ5UGB1c2Vk\nLgo=\n","Recipient":{"Name":"Patrick Jones","AddressLineOne":"555 Main Street","AddressLineTwo":"Apt 1","City":"Denver","Province":"CO","PostalCode":"54345"}}'
     headers:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -48,6 +47,6 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '"Mailing Content was an unsupported type."'
-    http_version: 
+    http_version:
   recorded_at: Mon, 12 Jan 2015 19:09:40 GMT
 recorded_with: VCR 2.9.3
