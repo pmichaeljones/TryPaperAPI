@@ -12,14 +12,15 @@ module TryPaper
     API_URL = "https://api.trypaper.com/Mailing"
 
     attr_accessor :document, :recipient
-    attr_reader :api_key, :return_address_id
+    attr_reader :api_key, :return_address_id, :tags
 
     # instantiate client and then add document and recipient
-    def initialize(api_key, return_address_id)
+    def initialize(api_key, return_address_id, tags = [])
       @recipient = TryPaper::Recipient.new
       @document = nil
       @api_key = api_key
       @return_address = return_address_id
+      @tags = tags
     end
 
     def send_data

@@ -5,7 +5,7 @@ require 'pry'
 describe TryPaper::Mailer do
 
   it 'should exist' do
-    mailing = TryPaper::Mailer.new(TEST_API_KEY)
+    mailing = TryPaper::Mailer.new(TEST_API_KEY, RETURN_ADDRESS_ID)
     expect(mailing).to be_kind_of(TryPaper::Mailer)
   end
 
@@ -13,7 +13,7 @@ describe TryPaper::Mailer do
     file = File.read('./spec/documents/mac.pdf')
     doc = TryPaper::Document.new(file)
     recipient = TryPaper::Recipient.new("Patrick Jones", "555 Main Street", "Apt 1", "Denver", "CO", "54345")
-    mailing = TryPaper::Mailer.new(TEST_API_KEY)
+    mailing = TryPaper::Mailer.new(TEST_API_KEY, RETURN_ADDRESS_ID)
     mailing.recipient = recipient
     expect(mailing.recipient).to eq(recipient)
   end
@@ -21,9 +21,14 @@ describe TryPaper::Mailer do
   it 'should have a document setter method' do
     file = File.read('./spec/documents/mac.pdf')
     doc = TryPaper::Document.new(file)
-    mailing = TryPaper::Mailer.new(TEST_API_KEY)
+    mailing = TryPaper::Mailer.new(TEST_API_KEY, RETURN_ADDRESS_ID)
     mailing.document = doc
     expect(mailing.document).to eq(doc)
+  end
+
+  it 'should accept an optional array as the last argument' do
+    mailing = TryPaper::Mailer.new(TEST_API_KEY, RETURN_ADDRESS_ID, ["triplicate", "duplicate"])
+    expect(mailing.tags).to eq(["triplicate", "duplicate"])
   end
 
 end
@@ -36,7 +41,7 @@ describe TryPaper::Mailer do
     doc = TryPaper::Document.new(file)
     recipient = TryPaper::Recipient.new("Patrick Jones", "555 Main Street", "Apt 1", "Denver", "CO", "54345")
 
-    subject { TryPaper::Mailer.new(TEST_API_KEY) }
+    subject { TryPaper::Mailer.new(TEST_API_KEY, RETURN_ADDRESS_ID) }
 
     it 'should receive a 201 response with successful send' do
       VCR.use_cassette('pdf_document') do
@@ -57,7 +62,7 @@ describe TryPaper::Mailer do
     doc = TryPaper::Document.new(file)
     recipient = TryPaper::Recipient.new("Patrick Jones", "555 Main Street", "Apt 1", "Denver", "CO", "54345")
 
-    subject { TryPaper::Mailer.new(TEST_API_KEY) }
+    subject { TryPaper::Mailer.new(TEST_API_KEY, RETURN_ADDRESS_ID) }
 
     it 'should receive a 404 error on bad document' do
       VCR.use_cassette('bad_document') do
