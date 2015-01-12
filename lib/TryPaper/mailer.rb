@@ -3,7 +3,6 @@ require 'pry'
 require 'net/http'
 
 module TryPaper
-  class WrongDocumentTypeError < StandardError; end
   class InvalidRecipientError < StandardError; end
   class InvalidAPIKeyError < StandardError; end
 
