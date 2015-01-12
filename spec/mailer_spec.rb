@@ -10,7 +10,7 @@ describe TryPaper::Mailer do
   end
 
   it 'should have a recipient setter method' do
-    file = File.read('./spec/documents/mac.pdf')
+    file = File.read('~/Documents/mac.pdf')
     doc = TryPaper::Document.new(file)
     recipient = TryPaper::Recipient.new("Patrick Jones", "555 Main Street", "Apt 1", "Denver", "CO", "54323")
     mailing = TryPaper::Mailer.new(TEST_API_KEY, RETURN_ADDRESS_ID)
@@ -19,7 +19,7 @@ describe TryPaper::Mailer do
   end
 
   it 'should have a document setter method' do
-    file = File.read('./spec/documents/mac.pdf')
+    file = File.read('~/Documents/mac.pdf')
     doc = TryPaper::Document.new(file)
     mailing = TryPaper::Mailer.new(TEST_API_KEY, RETURN_ADDRESS_ID)
     mailing.document = doc
@@ -37,7 +37,7 @@ end
 describe TryPaper::Mailer do
 
   context 'with a correct(pdf) document type' do
-    file = File.read('./spec/documents/mac.pdf')
+    file = File.read('~/Documents/mac.pdf')
     doc = TryPaper::Document.new(file)
     recipient = TryPaper::Recipient.new("Patrick Jones", "555 Main Street", "Apt 1", "Denver", "CO", "54345")
 
@@ -75,7 +75,7 @@ describe TryPaper::Mailer do
   end
 
   context 'with correct optional tags added' do
-    file = File.read('./spec/documents/mac.pdf')
+    file = File.read('~/Documents/mac.pdf')
     doc = TryPaper::Document.new(file)
     recipient = TryPaper::Recipient.new("Patrick Jones", "555 Main Street", "Apt 1", "Denver", "CO", "54345")
 

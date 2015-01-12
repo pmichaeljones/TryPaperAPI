@@ -10,6 +10,7 @@
 *.bundle
 *.so
 *.o
+*.gem
 *.a
 *.DS_Store
 mkmf.log
