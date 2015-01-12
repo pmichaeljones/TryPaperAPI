@@ -3,16 +3,16 @@ module TryPaper
   # address object for recipient address
   class Recipient
 
-    attr_accessor :name, :address1, :address2, :city, :province, :postalcode
+    attr_accessor :name, :address1, :address2, :city, :state, :zipcode
     attr_reader :formatted_address
 
-    def initialize(name = "", address1 = "", address2 = "", city = "", province = "", postalcode = "")
+    def initialize(name = "", address1 = "", address2 = "", city = "", state = "", zip = "")
       @name = name
       @address1 = address1
       @address2 = address2
       @city = city
-      @province = province
-      @postalcode = postalcode
+      @state = state
+      @zipcode = zip
     end
 
     def formatted_address
@@ -21,8 +21,8 @@ module TryPaper
         "AddressLineOne" => address1,
         "AddressLineTwo" => address2,
         "City" => city,
-        "Province" => province,
-        "PostalCode" => postalcode
+        "Province" => state,
+        "PostalCode" => zipcode
       }
     end
 

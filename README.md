@@ -47,8 +47,8 @@ client.recipient.configure do |r|
   r.address1 = "555 Main Street"
   r.address2 = "Apartment #3"
   r.city = "Denver"
-  r.province = "CO"
-  r.postalcode = "55555"
+  r.state = "CO"
+  r.zipcode = "55555"
 end
 ```
 

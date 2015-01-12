@@ -31,16 +31,16 @@ describe TryPaper::Recipient do
     expect(receiver.city).to eq("Denver")
   end
 
-  it 'should have a province setter method' do
+  it 'should have a state setter method' do
     receiver = TryPaper::Recipient.new
-    receiver.province = "Wisconsin"
-    expect(receiver.province).to eq("Wisconsin")
+    receiver.state = "Wisconsin"
+    expect(receiver.state).to eq("Wisconsin")
   end
 
-  it 'should have a postalcode setter method' do
+  it 'should have a zipcode setter method' do
     receiver = TryPaper::Recipient.new
-    receiver.postalcode = 342353
-    expect(receiver.postalcode).to eq(342353)
+    receiver.zipcode = 342353
+    expect(receiver.zipcode).to eq(342353)
   end
 
   describe "#formatted_address"  do
