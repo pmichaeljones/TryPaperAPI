@@ -26,6 +26,7 @@ module TryPaper
     def send_data
       {
         "ReturnAddressId" => return_address_id,
+        "Tags" => tags,
         "Content" => document.base64format,
         "Recipient" => recipient.formatted_address
       }

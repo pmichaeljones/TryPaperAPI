@@ -74,5 +74,23 @@ describe TryPaper::Mailer do
     end
 
   end
+
+  context 'with optional tags added' do
+    file = File.read('./spec/documents/mac.pdf')
+    doc = TryPaper::Document.new(file)
+    recipient = TryPaper::Recipient.new("Patrick Jones", "555 Main Street", "Apt 1", "Denver", "CO", "54345")
+
+    subject { TryPaper::Mailer.new(TEST_API_KEY, RETURN_ADDRESS_ID, ["force_bw", "triplicate_contents"]) }
+
+    it 'should receive a 201 response with successful send' do
+      VCR.use_cassette('good_document_with_tags') do
+        subject.document = doc
+        subject.recipient = recipient
+        response = subject.submit
+        expect(response.code).to eq("201")
+      end
+    end
+
+  end
 end
 
