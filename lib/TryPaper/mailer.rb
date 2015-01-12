@@ -19,7 +19,7 @@ module TryPaper
       @recipient = TryPaper::Recipient.new
       @document = nil
       @api_key = api_key
-      @return_address = return_address_id
+      @return_address_id = return_address_id
       @tags = tags
     end
 

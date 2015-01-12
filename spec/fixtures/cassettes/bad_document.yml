@@ -38,16 +38,16 @@ http_interactions:
       Strict-Transport-Security:
       - max-age=31536000
       X-Requestid:
-      - 01a8560f-8e8d-4424-9f62-caac9a6783c2
+      - 1a509996-cf4b-407f-a8ed-90eb7b534f90
       X-Apiversion:
       - 2.0.1
       Set-Cookie:
       - ARRAffinity=0fb861b9c6efe57eefc5a6471990344a9dafe3dcc9dc120612c4578f5eaef35e;Path=/;Domain=api.trypaper.com
       Date:
-      - Sun, 11 Jan 2015 18:56:59 GMT
+      - Mon, 12 Jan 2015 18:45:09 GMT
     body:
       encoding: UTF-8
       string: '"Mailing Content was an unsupported type."'
     http_version: 
-  recorded_at: Sun, 11 Jan 2015 18:56:59 GMT
+  recorded_at: Mon, 12 Jan 2015 18:45:09 GMT
 recorded_with: VCR 2.9.3
