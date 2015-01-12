@@ -12,7 +12,7 @@ describe TryPaper::Mailer do
   it 'should have a recipient setter method' do
     file = File.read('./spec/documents/mac.pdf')
     doc = TryPaper::Document.new(file)
-    recipient = TryPaper::Recipient.new("Patrick Jones", "555 Main Street", "Apt 1", "Denver", "CO", "54345")
+    recipient = TryPaper::Recipient.new("Patrick Jones", "555 Main Street", "Apt 1", "Denver", "CO", "54323")
     mailing = TryPaper::Mailer.new(TEST_API_KEY, RETURN_ADDRESS_ID)
     mailing.recipient = recipient
     expect(mailing.recipient).to eq(recipient)

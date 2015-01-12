@@ -3,6 +3,8 @@ module TryPaper
   # address object for recipient address
   class Recipient
 
+    class InvalidDataError < StandardError; end
+
     attr_accessor :name, :address1, :address2, :city, :state, :zipcode
     attr_reader :formatted_address
 
@@ -13,6 +15,10 @@ module TryPaper
       @city = city
       @state = state
       @zipcode = zip
+
+      [@name, @address1, @address2, @city, @state, @zipcode].each do |field|
+        raise InvalidDataError, "Recipient attributes must strings" if field.class != String
+      end
     end
 
     def formatted_address
@@ -29,6 +35,9 @@ module TryPaper
     # set up recipient configuration prior to submission
     def configure
       yield self
+      [name, address1, address2, city, state, zipcode].each do |field|
+        raise InvalidDataError, "Recipient attributes must strings" if field.class != String
+      end
     end
 
   end
