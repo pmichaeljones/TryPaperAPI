@@ -72,10 +72,9 @@ describe TryPaper::Mailer do
         expect(response.code).to eq("400")
       end
     end
-
   end
 
-  context 'with optional tags added' do
+  context 'with correct optional tags added' do
     file = File.read('./spec/documents/mac.pdf')
     doc = TryPaper::Document.new(file)
     recipient = TryPaper::Recipient.new("Patrick Jones", "555 Main Street", "Apt 1", "Denver", "CO", "54345")
@@ -90,7 +89,7 @@ describe TryPaper::Mailer do
         expect(response.code).to eq("201")
       end
     end
-
   end
+
 end
 

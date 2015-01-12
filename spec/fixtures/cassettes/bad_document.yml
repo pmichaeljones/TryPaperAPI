@@ -5,7 +5,7 @@ http_interactions:
     uri: https://api.trypaper.com/Mailing
     body:
       encoding: UTF-8
-      string: '{"ReturnAddressId":"555_Main_Street_Fake_City","Content":"VHJ5UGFwZXIgQVBJIG9ubHkgYWNjZXB0cyBQREZzIGFuZCBIVE1MIGZpbGVz\nLiBUaGlzIGRvY3VtZW50IHdpbGwgcmFpc2UgYW4gZXJyb3Igd2hlbiB1c2Vk\nLgo=\n","Recipient":{"Name":"Patrick
+      string: '{"ReturnAddressId":"555_Main_Street_Fake_City","Tags":[],"Content":"VHJ5UGFwZXIgQVBJIG9ubHkgYWNjZXB0cyBQREZzIGFuZCBIVE1MIGZpbGVz\nLiBUaGlzIGRvY3VtZW50IHdpbGwgcmFpc2UgYW4gZXJyb3Igd2hlbiB1c2Vk\nLgo=\n","Recipient":{"Name":"Patrick
         Jones","AddressLineOne":"555 Main Street","AddressLineTwo":"Apt 1","City":"Denver","Province":"CO","PostalCode":"54345"}}'
     headers:
       Accept-Encoding:
@@ -38,16 +38,16 @@ http_interactions:
       Strict-Transport-Security:
       - max-age=31536000
       X-Requestid:
-      - 1a509996-cf4b-407f-a8ed-90eb7b534f90
+      - b149d293-0b1b-4eca-ab7a-da4b2115f1ef
       X-Apiversion:
       - 2.0.1
       Set-Cookie:
       - ARRAffinity=0fb861b9c6efe57eefc5a6471990344a9dafe3dcc9dc120612c4578f5eaef35e;Path=/;Domain=api.trypaper.com
       Date:
-      - Mon, 12 Jan 2015 18:45:09 GMT
+      - Mon, 12 Jan 2015 19:04:49 GMT
     body:
       encoding: UTF-8
       string: '"Mailing Content was an unsupported type."'
     http_version: 
-  recorded_at: Mon, 12 Jan 2015 18:45:09 GMT
+  recorded_at: Mon, 12 Jan 2015 19:04:50 GMT
 recorded_with: VCR 2.9.3
