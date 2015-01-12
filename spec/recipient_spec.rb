@@ -43,6 +43,11 @@ describe TryPaper::Recipient do
     expect(receiver.zipcode).to eq(342353)
   end
 
+  it 'should raise error on non-string attribute field' do
+    receiver = TryPaper::Recipient.new("Patrick", "555 Main Street", "Apt 1", "Denver", "CO", 55555)
+    expect{receiver.formatted_address}.to raise_error
+  end
+
   describe "#formatted_address"  do
 
     it "should return an address hash" do
