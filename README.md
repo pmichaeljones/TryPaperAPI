@@ -23,12 +23,20 @@ Or install it yourself as:
 
 ## Usage
 
-Instantiate the client and set a default return address ID(created in the TryPaper dashboard):
+Instantiate the client with API and return address ID(both created in the TryPaper dashboard):
 
 ```ruby
-DEFAULT_RETURN_ADDRESS = "business_headquarters"
+return_address_id = "main_street_headquarters"
 api_key = "AAABBDDCCDDSS"
-client = TryPaper::Mailer.new(api_key)
+client = TryPaper::Mailer.new(api_key, return_address_id)
+```
+
+Add optional printing tags array if desired. See [available tags here.](http://docs.trypaper.com/article/36-mailing-tags)
+
+```ruby
+return_address_id = "main_street_headquarters"
+api_key = "AAABBDDCCDDSS"
+client = TryPaper::Mailer.new(api_key, return_address_id, ["force_bw", "duplicate_contents"])
 ```
 
 Set the recipient value(leave address2 blank if needed):
