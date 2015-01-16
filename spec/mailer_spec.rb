@@ -1,5 +1,4 @@
 require 'spec_helper'
-require 'pry'
 
 # Testing the class here
 describe TryPaper::Mailer do
