@@ -5,17 +5,11 @@ describe TryPaper::Mailer do
 
   let(:mailing){TryPaper::Mailer.new(TEST_API_KEY, RETURN_ADDRESS_ID)}
 
-  before do
-
-  end
-
   it 'should exist' do
     expect(mailing).to be_kind_of(TryPaper::Mailer)
   end
 
   it 'should have a recipient setter method' do
-    file = File.read('../../Documents/mac.pdf')
-    doc = TryPaper::Document.new(file)
     recipient = TryPaper::Recipient.new("Patrick Jones", "555 Main Street", "Apt 1", "Denver", "CO", "54323")
     mailing.recipient = recipient
     expect(mailing.recipient).to eq(recipient)
